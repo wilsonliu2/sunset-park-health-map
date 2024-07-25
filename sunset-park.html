@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunset Park Health Map</title>
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Leaflet JavaScript -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- Leaflet pop-up plugin for responsive pop-ups -->
+    <script src="https://unpkg.com/leaflet-responsive-popup@1.0.0/leaflet.responsive.popup.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-responsive-popup@1.0.0/leaflet.responsive.popup.css"
+    />
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Highcharts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="map.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Sunset Park Health Map</h1>
+    </header>
+    <!-- Map container for everything -->
+    <div id="map-layout">
+      <!-- Container just the map and select buttons -->
+      <div id="map-section">
+        <!-- Container for map selection buttons -->
+        <div id="map-btn-container">
+          <button id="btnDemographicLanguageMap" class="mapSelectBtn">
+            Demographics
+          </button>
+          <button id="btnHealthRiskBehaviorsMap" class="mapSelectBtn">
+            Health Risk Behaviors
+          </button>
+          <button id="btnHealthOutcomesMap" class="mapSelectBtn">
+            Health Outcomes
+          </button>
+          <button id="btnScreeningRatesMap" class="mapSelectBtn">
+            Screening Rates
+          </button>
+          <button id="btnHealthStatusMap" class="mapSelectBtn">
+            Health Status
+          </button>
+        </div>
+        <!-- Container for maps -->
+        <div id="map-container">
+          <div id="demographicLanguageMap" class="map"></div>
+          <div id="healthRiskBehaviorsMap" class="map"></div>
+          <div id="healthOutcomesMap" class="map"></div>
+          <div id="screeningRatesMap" class="map"></div>
+          <div id="healthStatusMap" class="map"></div>
+        </div>
+      </div>
+      <!-- Container for zip code -->
+      <div id="zip-code-container">
+        <div id="zip-code-header">
+          <div id="zip-code-header-text">ZIP CODE LEVEL DATA</div>
+
+          <!-- Zip code dropdown -->
+          <select id="zip-code-dropdown">
+            <option>Select a Zip Code</option>
+          </select>
+        </div>
+
+        <div id="zip-code-content">
+          <h3 style="text-align: center">
+            Welcome to the Sunset Park Health Map!
+          </h3>
+          <br />
+          <p>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> To the left, you
+            will find a map of Sunset Park showing various health and
+            demographic data on the census tract level. There is also a "Zip
+            Code Boundaries" layer, which you can use to orient yourself with
+            the different areas of Sunset Park.
+          </p>
+          <ul>
+            <li>Click each tract to find relevant data about block groups</li>
+            <br />
+            <li>
+              Toggle the "Zip Code Boundaries" layer to find population data on
+              the zip code level and to see where census tracts fall and are
+              divided
+            </li>
+            <br />
+            <li>
+              Zoom in to see street names and road level details on the map and
+              to see which streets and blocks fall within each tract
+            </li>
+          </ul>
+          <br />
+          <p>
+            <i class="fa fa-arrow-up" aria-hidden="true"></i> To view a summary
+            of health data across all categories, click the
+            <i>"Select a Zip Code"</i> dropdown button above and select a zip
+            code.
+          </p>
+          <br />
+          <p>
+            <i class="fa fa-arrow-down" aria-hidden="true"></i> Finally, check
+            out the charts below to see an overview of the health statistics on
+            a neighborhood level (neighborhoods defined as
+            <a
+              href="https://en.wikipedia.org/wiki/Category:Neighborhoods_in_New_York_City"
+              style="color: #008080"
+              target="_blank"
+              >geographical neighborhoods</a
+            >)
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Highcharts Section -->
+    <section id="highCharts-section">
+      <div id="hc-btns">
+        <button id="hc-risk-btn">Health Risk Behaviors</button>
+        <button id="hc-outcomes-btn">Health Outcomes</button>
+        <button id="hc-screens-btn">Screening Rates</button>
+        <button id="hc-status-btn">Health Status</button>
+      </div>
+
+      <div id="chart-behavior" class="high-charts-container"></div>
+      <div id="chart-health" class="high-charts-container"></div>
+      <div id="chart-screening" class="high-charts-container"></div>
+      <div id="chart-status" class="high-charts-container"></div>
+    </section>
+    <!-- Script files-->
+    <script>
+      //=========================================================== CONFIGURATION =================================================================
+      const BORO_NAME = "Brooklyn";
+      const COUNTY_NAME = "Kings";
+
+      // MAP BOUNDS - set bounds so the map has limits for visibility
+      var southWest = L.latLng(40.6413, -74.0211),
+        northEast = L.latLng(40.659, -73.9947);
+      bounds = L.latLngBounds(southWest, northEast);
+      const INITIAL_ZOOM_LEVEL = 13;
+      const ZOOM_INCREMENT = 0.5;
+
+      const sunsetParkCensusTracts = [
+        "36047000200",
+        "36047001801",
+        "36047001802",
+        "36047001803",
+        "36047001804",
+        "36047002000",
+        "36047002200",
+        "36047007200",
+        "36047007400",
+        "36047007600",
+        "36047007800",
+        "36047008000",
+        "36047008200",
+        "36047008400",
+        "36047010100",
+        "36047014300",
+        "36047014500",
+        "36047014700",
+        "36047008600",
+        "36047008800",
+        "36047009001",
+        "36047009201",
+        "36047009401",
+        "36047009600",
+        "36047009800",
+        "36047010000",
+        "36047010200",
+        "36047010401",
+        "36047010601",
+        "36047010801",
+        "36047011800",
+        "36047012200",
+        "36047009002",
+        "36047009202",
+        "36047009402",
+        "36047010402",
+        "36047010602",
+        "36047010802",
+        "36047011000",
+        "36047011200",
+        "36047011400",
+        "36047011600",
+      ];
+      const sunsetParkCensusTractsSet = new Set(sunsetParkCensusTracts);
+
+      const sunsetParkZipCodes = [11220, 11232];
+    </script>
+    <script src="geojson-data/nyc-health-data.js"></script>
+    <script src="geojson-data/nyc-language-demographic.js"></script>
+    <script src="geojson-data/zip-code-boundaries.js"></script>
+    <script src="geojson-data/zip-code-data.js"></script>
+    <script src="geojson-data/neighborhood-summaries.js"></script>
+    <script src="mapHandler.js"></script>
+    <script src="chartHandler.js"></script>
+    <script src="sunset-map.js"></script>
+    <script src="zipCodeHandler.js"></script>
+  </body>
+</html>
