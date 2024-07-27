@@ -114,19 +114,74 @@
             code.
           </p>
           <br />
-          <p>
-            <i class="fa fa-arrow-down" aria-hidden="true"></i> Finally, check
-            out the charts below to see an overview of the health statistics on
-            a neighborhood level (neighborhoods defined as
-            <a
-              href="https://en.wikipedia.org/wiki/Category:Neighborhoods_in_New_York_City"
-              style="color: #008080"
-              target="_blank"
-              >geographical neighborhoods</a
-            >)
-          </p>
         </div>
       </div>
+    </div>
+    <!-- Community profile -->
+    <div id="community-profile-container">
+      <h2>Community Profile</h2>
+      <p>PLACE HOLDER</p>
+
+      <h3>Health Profile</h3>
+      <p><strong>Population:</strong> 131,654</p>
+      <p><strong>Good or Excellent Health:</strong> 72% (vs 78% in Brooklyn)</p>
+      <p><strong>Life Expectancy:</strong> 84.1 years</p>
+      <p><strong>Residents Born Outside the US:</strong> 45% (vs 37% in NYC)</p>
+      <p><strong>Limited English Proficiency:</strong> 48% (vs 22% in NYC)</p>
+      <h3>Population by Age</h3>
+      <ul>
+        <li>0 to 17: 22% (Sunset Park) vs 21% (NYC)</li>
+        <li>18 to 24: 8% (Sunset Park) vs 8% (NYC)</li>
+        <li>25 to 44: 38% (Sunset Park) vs 30% (NYC)</li>
+        <li>45 to 64: 21% (Sunset Park) vs 25% (NYC)</li>
+        <li>65+: 11% (Sunset Park) vs 16% (NYC)</li>
+      </ul>
+      <h3>Population by Race</h3>
+      <ul>
+        <li>Asian: 31% (Sunset Park) vs 15% (NYC)</li>
+        <li>Black: 3% (Sunset Park) vs 22% (NYC)</li>
+        <li>Latino: 41% (Sunset Park) vs 29% (NYC)</li>
+        <li>White: 23% (Sunset Park) vs 32% (NYC)</li>
+        <li>Other: 2% (Sunset Park) vs 2% (NYC)</li>
+      </ul>
+      <h3>Education</h3>
+      <p>
+        <strong>Elementary Absenteeism:</strong> 10% (Sunset Park) vs 22% (NYC)
+        vs 21% (Brooklyn)
+      </p>
+      <p>
+        <strong>On-Time Graduation:</strong> 81% (Sunset Park) vs 81% (Brooklyn)
+        vs 82% (NYC)
+      </p>
+      <p><strong>College Degree:</strong> 34% (Sunset Park) vs 44% (NYC)</p>
+      <p>
+        <strong>Less than High School:</strong> 38% (Sunset Park) vs 18%
+        (Brooklyn)
+      </p>
+      <h3>Health Statistics</h3>
+      <ul>
+        <li>
+          67% report getting physical activity in the last 30 days (similar to
+          NYC)
+        </li>
+        <li>
+          89% report eating at least 1 serving of fruit or vegetables daily
+          (similar to NYC)
+        </li>
+        <li>15% drink at least 1 sugar drink a day (lower than NYC)</li>
+        <li>Current smoking: 10% (Sunset Park) vs 11% (NYC)</li>
+        <li>Adults without insurance: 14% (Sunset Park) vs 13% (NYC)</li>
+        <li>
+          Adults without needed medical care: 7% (Sunset Park) vs 13% (NYC)
+        </li>
+      </ul>
+      <h3>Health Outcomes</h3>
+      <ul>
+        <li>Obesity: 19% (Sunset Park) vs 25% (Brooklyn)</li>
+        <li>Diabetes: 10% (Sunset Park) vs 12% (Brooklyn)</li>
+        <li>Hypertension: 25% (Sunset Park) vs 28% (Brooklyn)</li>
+        <li>Binge drinking: 22% (Sunset Park) vs 17% (Brooklyn)</li>
+      </ul>
     </div>
     <!-- Highcharts Section -->
     <section id="highCharts-section">
@@ -202,6 +257,69 @@
       const sunsetParkCensusTractsSet = new Set(sunsetParkCensusTracts);
 
       const sunsetParkZipCodes = [11220, 11232];
+
+      const arabicBreaks = [0, 0, 18, 37, 71, 104, 253];
+      const chineseBreaks = [0, 183, 490, 863, 1437, 1914, 2945];
+      const frenchBreaks = [0, 0, 6, 10, 14, 20, 28];
+      const germanBreaks = [0, 1, 19, 29, 62, 351, 974];
+      const koreanBreaks = [0, 0, 3, 10, 11, 23, 31];
+      const otherBreaks = [0, 0, 13, 25, 32, 42, 201];
+      const otherAsiaBreaks = [0, 9, 28, 61, 74, 98, 153];
+      const otherIndoBreaks = [0, 10, 26, 52, 110, 166, 440];
+      const russianBreaks = [0, 11, 30, 53, 86, 189, 514];
+      const spanishBreaks = [0, 284, 782, 1299, 2137, 2453, 4012];
+      const tagalogBreaks = [0, 0, 7, 10, 16, 19, 63];
+      const vietnameseBreaks = [0, 0, 10, 13, 27, 35, 50];
+      const totalPopBreaks = [3, 3, 1915, 2502, 3882, 4882, 6876];
+
+      const lackOfHealthInsuranceBreaks = [
+        7.7, 9.5, 15.5, 17.6, 21.3, 25.4, 31.1,
+      ];
+      const bingeDrinkingBreaks = [10.3, 11.5, 14.3, 16, 18.3, 20.2, 22.8];
+      const currentSmokingBreaks = [8.8, 11, 13.5, 15.3, 17.4, 19.5, 22.4];
+      const physicalInactivityBreaks = [17.9, 20, 28.6, 33.7, 37.2, 39.5, 46.1];
+      const sleepLessThan7HoursBreaks = [31, 32, 34.1, 35.1, 37.2, 38.2, 39.6];
+      const currentAsthmaBreaks = [9, 9.3, 9.6, 10, 10.2, 10.5, 11.2];
+      const highBloodPressureBreaks = [
+        16.2, 17.6, 19.9, 22.6, 24.7, 26.3, 31.6,
+      ];
+      const cancerExceptSkinBreaks = [2.9, 3.1, 3.5, 3.7, 3.9, 4.2, 6.3];
+      const cholesterolScreeningBreaks = [
+        75.4, 75.4, 77.6, 79.6, 81.1, 83.6, 86,
+      ];
+      const chronicKidneyDiseaseBreaks = [1.8, 1.9, 2.5, 2.8, 3, 3.2, 4];
+      const arthritisBreaks = [11.6, 12.5, 13.9, 14.7, 15.4, 17.3, 23.2];
+      const coronaryHeartDiseaseBreaks = [2.5, 2.7, 3.6, 4.6, 5.1, 5.7, 8.3];
+      const diabetesBreaks = [5.6, 6.2, 8.4, 10.8, 12.5, 13.7, 15.6];
+      const obesityBreaks = [17.3, 18.8, 21.4, 23.4, 25.9, 28.9, 32.3];
+      const strokeBreaks = [1.4, 1.5, 2, 2.6, 3, 3.3, 4.5];
+      const annualCheckupBreaks = [69.1, 69.7, 70.6, 71, 72, 72.9, 74.2];
+      const dentalVisitBreaks = [34.6, 34.6, 41.7, 46.7, 52.4, 62, 69];
+      const mammographyUseBreaks = [72.1, 73.8, 75.6, 77.4, 78.6, 79.6, 81.1];
+      const cervicalCancerScreeningBreaks = [
+        63.5, 64.2, 68.3, 74.1, 77, 80.4, 86.2,
+      ];
+      const colorectalCancerScreeningBreaks = [
+        57.5, 59.6, 62.8, 64.8, 68.2, 72, 75.5,
+      ];
+      const depressionBreaks = [15.2, 15.5, 17.2, 18.3, 18.8, 19.3, 20.4];
+      const frequentMentalHealthDistressBreaks = [
+        14.3, 14.5, 15.8, 17.3, 18.4, 19.4, 20.7,
+      ];
+      const frequentPhysicalHealthDistressBreaks = [
+        6.6, 7.4, 9.8, 11.5, 12.6, 13.5, 15.1,
+      ];
+      const fairOrPoorHealthBreaks = [9.4, 11.1, 17.2, 21.4, 24, 26.5, 30.1];
+      const anyDisabilityBreaks = [18.3, 20.4, 26.6, 32.1, 35.5, 38.1, 39.7];
+      const hearingDisabilityBreaks = [3.2, 3.4, 4.3, 5.3, 5.8, 6.4, 8.9];
+      const visionDisabilityBreaks = [3.1, 3.8, 6.2, 9.2, 10.6, 12, 13.1];
+      const cognitiveDisabilityBreaks = [9.5, 10.9, 13, 16, 17.3, 19.4, 22];
+      const mobilityDisabilityBreaks = [6.6, 7.7, 11.9, 14.8, 16.8, 18.8, 21.7];
+      const selfCareDisabilityBreaks = [2, 2.4, 3.7, 5.1, 5.7, 6.8, 7.8];
+      const independentLivingDisabilityBreaks = [
+        5, 5.8, 7.4, 10.7, 12.3, 13.5, 14.6,
+      ];
+      const highCholesterolBreaks = [26.7, 27.5, 31.7, 33.5, 35, 37, 38.6];
     </script>
     <script src="geojson-data/nyc-health-data.js"></script>
     <script src="geojson-data/nyc-language-demographic.js"></script>

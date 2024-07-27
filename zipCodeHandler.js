@@ -30,7 +30,7 @@ function updateContentContainer(selectedZipCode) {
       <br>
       <h3 style="text-align:center"><i>or</i></h3>
       <br>
-      <h5 style="text-align:center">Check out the charts below to see an overview of the health statistics on a neighborhood level.</h5>
+      <h5 style="text-align:center">Check out the charts below to see an overview of the health statistics of Sunset Park.</h5>
       `;
       return;
     }

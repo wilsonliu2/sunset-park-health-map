@@ -285,3 +285,29 @@ details > p {
 .highcharts-credits {
   display: none;
 }
+
+/* ================================================================== COMMUNITY PROFILE STYLING ================================================================== */
+#community-profile-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid rgb(33, 37, 41);
+}
+
+#community-profile-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#community-profile-container p,
+#community-profile-container ul {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+#community-profile-container ul {
+  padding-left: 20px;
+}
+
+#community-profile-container ul li {
+  margin-bottom: 5px;
+}
