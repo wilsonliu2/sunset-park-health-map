@@ -117,72 +117,968 @@
         </div>
       </div>
     </div>
-    <!-- Community profile -->
-    <div id="community-profile-container">
-      <h2>Community Profile</h2>
-      <p>PLACE HOLDER</p>
+    <!------------------------------------------------------- Community profile Overview ------------------------------------------------------->
+    <div class="community-profile-container">
+      <details>
+        <summary>
+          <h2>Overview</h2>
+        </summary>
+        <p>
+          Sunset Park is a neighborhood in Brooklyn with a population of
+          ~131,654. It has a diverse demographic, with a significant portion of
+          its residents being born outside the US and a high percentage of
+          individuals with limited English proficiency.
+        </p>
 
-      <h3>Health Profile</h3>
-      <p><strong>Population:</strong> 131,654</p>
-      <p><strong>Good or Excellent Health:</strong> 72% (vs 78% in Brooklyn)</p>
-      <p><strong>Life Expectancy:</strong> 84.1 years</p>
-      <p><strong>Residents Born Outside the US:</strong> 45% (vs 37% in NYC)</p>
-      <p><strong>Limited English Proficiency:</strong> 48% (vs 22% in NYC)</p>
-      <h3>Population by Age</h3>
-      <ul>
-        <li>0 to 17: 22% (Sunset Park) vs 21% (NYC)</li>
-        <li>18 to 24: 8% (Sunset Park) vs 8% (NYC)</li>
-        <li>25 to 44: 38% (Sunset Park) vs 30% (NYC)</li>
-        <li>45 to 64: 21% (Sunset Park) vs 25% (NYC)</li>
-        <li>65+: 11% (Sunset Park) vs 16% (NYC)</li>
-      </ul>
-      <h3>Population by Race</h3>
-      <ul>
-        <li>Asian: 31% (Sunset Park) vs 15% (NYC)</li>
-        <li>Black: 3% (Sunset Park) vs 22% (NYC)</li>
-        <li>Latino: 41% (Sunset Park) vs 29% (NYC)</li>
-        <li>White: 23% (Sunset Park) vs 32% (NYC)</li>
-        <li>Other: 2% (Sunset Park) vs 2% (NYC)</li>
-      </ul>
-      <h3>Education</h3>
-      <p>
-        <strong>Elementary Absenteeism:</strong> 10% (Sunset Park) vs 22% (NYC)
-        vs 21% (Brooklyn)
-      </p>
-      <p>
-        <strong>On-Time Graduation:</strong> 81% (Sunset Park) vs 81% (Brooklyn)
-        vs 82% (NYC)
-      </p>
-      <p><strong>College Degree:</strong> 34% (Sunset Park) vs 44% (NYC)</p>
-      <p>
-        <strong>Less than High School:</strong> 38% (Sunset Park) vs 18%
-        (Brooklyn)
-      </p>
-      <h3>Health Statistics</h3>
-      <ul>
-        <li>
-          67% report getting physical activity in the last 30 days (similar to
-          NYC)
-        </li>
-        <li>
-          89% report eating at least 1 serving of fruit or vegetables daily
-          (similar to NYC)
-        </li>
-        <li>15% drink at least 1 sugar drink a day (lower than NYC)</li>
-        <li>Current smoking: 10% (Sunset Park) vs 11% (NYC)</li>
-        <li>Adults without insurance: 14% (Sunset Park) vs 13% (NYC)</li>
-        <li>
-          Adults without needed medical care: 7% (Sunset Park) vs 13% (NYC)
-        </li>
-      </ul>
-      <h3>Health Outcomes</h3>
-      <ul>
-        <li>Obesity: 19% (Sunset Park) vs 25% (Brooklyn)</li>
-        <li>Diabetes: 10% (Sunset Park) vs 12% (Brooklyn)</li>
-        <li>Hypertension: 25% (Sunset Park) vs 28% (Brooklyn)</li>
-        <li>Binge drinking: 22% (Sunset Park) vs 17% (Brooklyn)</li>
-      </ul>
+        <h3>Health Profile</h3>
+        <div id="health-profile">
+          <p><strong>Population:</strong> 131,654</p>
+          <p>
+            <strong>Good or Excellent Health:</strong> 72%
+            <span>(vs 78% in Brooklyn)</span>
+          </p>
+          <p><strong>Life Expectancy:</strong> 84.1 years</p>
+          <p>
+            <strong>Residents Born Outside the US:</strong> 45%
+            <span>(vs 37% in NYC)</span>
+          </p>
+          <p>
+            <strong>Limited English Proficiency:</strong> 48%
+            <span>(vs 22% in NYC)</span>
+          </p>
+          <p>
+            The health profile of Sunset Park reveals a community with a higher
+            life expectancy compared to the NYC average. However, it faces
+            challenges with a lower percentage of residents reporting good or
+            excellent health and a high percentage of residents with limited
+            English proficiency.
+          </p>
+        </div>
+
+        <h3>Population by Age</h3>
+        <div id="population-by-age">
+          <ul>
+            <li>
+              <strong>0 to 17:</strong> 22% (Sunset Park)
+              <span>vs 21% (NYC)</span>
+            </li>
+            <li>
+              <strong>18 to 24:</strong> 8% (Sunset Park)
+              <span>vs 8% (NYC)</span>
+            </li>
+            <li>
+              <strong>25 to 44:</strong> 38% (Sunset Park)
+              <span>vs 30% (NYC)</span>
+            </li>
+            <li>
+              <strong>45 to 64:</strong> 21% (Sunset Park)
+              <span>vs 25% (NYC)</span>
+            </li>
+            <li>
+              <strong>65+:</strong> 11% (Sunset Park)
+              <span>vs 16% (NYC)</span>
+            </li>
+          </ul>
+          <div class="chart" id="age-distribution-chart"></div>
+          <p>
+            The age distribution in Sunset Park indicates a younger population,
+            with a higher percentage of residents aged 25 to 44 compared to the
+            NYC average. The community has fewer older adults aged 65 and over
+            compared to the citywide average.
+          </p>
+        </div>
+
+        <h3>Population by Race</h3>
+        <div id="population-by-race">
+          <ul>
+            <li>
+              <strong>Asian:</strong> 31% (Sunset Park)
+              <span>vs 15% (NYC)</span>
+            </li>
+            <li>
+              <strong>Black:</strong> 3% (Sunset Park)
+              <span>vs 22% (NYC)</span>
+            </li>
+            <li>
+              <strong>Latino:</strong> 41% (Sunset Park)
+              <span>vs 29% (NYC)</span>
+            </li>
+            <li>
+              <strong>White:</strong> 23% (Sunset Park)
+              <span>vs 32% (NYC)</span>
+            </li>
+            <li>
+              <strong>Other:</strong> 2% (Sunset Park)
+              <span>vs 2% (NYC)</span>
+            </li>
+          </ul>
+          <div class="chart" id="race-distribution-chart"></div>
+          <p>
+            Sunset Park is a diverse community, with a higher percentage of
+            Asian and Latino residents compared to NYC overall. The community
+            has a lower percentage of Black residents and a comparable
+            percentage of White and other races compared to the city average.
+          </p>
+        </div>
+
+        <h3>Education</h3>
+        <div id="education">
+          <p>
+            <strong>Elementary Absenteeism:</strong> 10% (Sunset Park)
+            <span>vs 22% (NYC) vs 21% (Brooklyn)</span>
+          </p>
+          <p>
+            <strong>On-Time Graduation:</strong> 81% (Sunset Park)
+            <span>vs 81% (Brooklyn) vs 82% (NYC)</span>
+          </p>
+          <p>
+            <strong>College Degree:</strong> 34% (Sunset Park)
+            <span>vs 44% (NYC)</span>
+          </p>
+          <p>
+            <strong>Less than High School:</strong> 38% (Sunset Park)
+            <span>vs 18% (Brooklyn)</span>
+          </p>
+          <div class="chart" id="education-chart"></div>
+          <p>
+            Education levels in Sunset Park show a mixed picture. While on-time
+            graduation rates are on par with city and borough averages, the
+            neighborhood faces challenges with higher rates of residents lacking
+            a high school diploma and fewer residents holding college degrees
+            compared to city averages.
+          </p>
+        </div>
+
+        <h3>Health Statistics</h3>
+        <div id="health-statistics">
+          <ul>
+            <li>
+              <strong>Physical Activity:</strong> 67% report getting physical
+              activity in the last 30 days
+              <span>(similar to NYC)</span>
+            </li>
+            <li>
+              <strong>Fruit or Vegetable Intake:</strong> 89% report eating at
+              least 1 serving of fruit or vegetables daily
+              <span>(similar to NYC)</span>
+            </li>
+            <li>
+              <strong>Sugar Drink Consumption:</strong> 15% drink at least 1
+              sugar drink a day <span>(lower than NYC)</span>
+            </li>
+            <li>
+              <strong>Current Smoking:</strong> 10% (Sunset Park)
+              <span>vs 11% (NYC)</span>
+            </li>
+            <li>
+              <strong>Adults without Insurance:</strong> 14% (Sunset Park)
+              <span>vs 13% (NYC)</span>
+            </li>
+            <li>
+              <strong>Adults without Needed Medical Care:</strong> 7% (Sunset
+              Park) <span>vs 13% (NYC)</span>
+            </li>
+          </ul>
+          <div class="chart" id="health-statistics-chart"></div>
+          <p>
+            Health statistics for Sunset Park residents indicate positive
+            behaviors such as high physical activity and fruit or vegetable
+            intake, as well as lower sugar drink consumption compared to NYC
+            averages. However, there are slightly higher rates of uninsured
+            adults and those without needed medical care.
+          </p>
+        </div>
+
+        <h3>Health Outcomes</h3>
+        <div id="health-outcomes">
+          <ul>
+            <li>
+              <strong>Obesity:</strong> 19% (Sunset Park)
+              <span>vs 25% (Brooklyn)</span>
+            </li>
+            <li>
+              <strong>Diabetes:</strong> 10% (Sunset Park)
+              <span>vs 12% (Brooklyn)</span>
+            </li>
+            <li>
+              <strong>Hypertension:</strong> 25% (Sunset Park)
+              <span>vs 28% (Brooklyn)</span>
+            </li>
+            <li>
+              <strong>Binge Drinking:</strong> 22% (Sunset Park)
+              <span>vs 17% (Brooklyn)</span>
+            </li>
+          </ul>
+          <div class="chart" id="health-outcomes-chart"></div>
+          <p>
+            Health outcomes in Sunset Park show that the community fares better
+            than Brooklyn in terms of obesity and diabetes rates. However,
+            hypertension remains a significant concern, and binge drinking rates
+            are higher compared to the borough average.
+          </p>
+        </div>
+      </details>
     </div>
+
+    <!------------------------------------------------------- Community profile Comparison ------------------------------------------------------->
+    <details class="comparison-container details-container">
+      <summary class="comparison-header">
+        <h2>Comparison to Previous Years</h2>
+      </summary>
+      <p>
+        This comparison highlights the changes in key indicators for Sunset Park
+        over the years, comparing the latest available data (2022) to the
+        average of previous years (2000, 2006, 2010, 2019, 2021)
+      </p>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Description</th>
+            <th>2022</th>
+            <th>Average of Previous Years</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Indicator">
+              Households with children under 18 years old
+            </td>
+            <td data-label="Description">
+              The percentage of households living with children under 18.
+            </td>
+            <td data-label="2022">36.1%</td>
+            <td data-label="Average of Previous Years">38.85%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Single-person households</td>
+            <td data-label="Description">
+              The share of households that include only one person.
+            </td>
+            <td data-label="2022">23.6%</td>
+            <td data-label="Average of Previous Years">22.76%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Percent Asian</td>
+            <td data-label="Description">
+              The percentage of the total population that identifies as Asian
+              (non-Hispanic).
+            </td>
+            <td data-label="2022">24.6%</td>
+            <td data-label="Average of Previous Years">27.73%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Percent Black</td>
+            <td data-label="Description">
+              The percentage of the total population that identifies as Black
+              (non-Hispanic).
+            </td>
+            <td data-label="2022">2.4%</td>
+            <td data-label="Average of Previous Years">3.07%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Percent Hispanic</td>
+            <td data-label="Description">
+              The percentage of the total population that identifies as Hispanic
+              (of any race).
+            </td>
+            <td data-label="2022">40.7%</td>
+            <td data-label="Average of Previous Years">41.42%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Percent White</td>
+            <td data-label="Description">
+              The percentage of the total population that identifies as White
+              (non-Hispanic).
+            </td>
+            <td data-label="2022">28.3%</td>
+            <td data-label="Average of Previous Years">24.95%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Racial diversity index</td>
+            <td data-label="Description">
+              The probability that two randomly chosen people in a given
+              geographic area will be of a different race.
+            </td>
+            <td data-label="2022">0.69</td>
+            <td data-label="Average of Previous Years">0.68</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Income diversity ratio</td>
+            <td data-label="Description">
+              The income earned by the 80th percentile household divided by the
+              income earned by the 20th percentile household for a given
+              geographic area, excluding all households without positive income.
+            </td>
+            <td data-label="2022">5.4</td>
+            <td data-label="Average of Previous Years">5.44</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Homeownership rate</td>
+            <td data-label="Description">
+              The number of owner-occupied units divided by the total number of
+              occupied housing units.
+            </td>
+            <td data-label="2022">32.1%</td>
+            <td data-label="Average of Previous Years">29.48%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Median household income (2023$)</td>
+            <td data-label="Description">
+              The median household's total income of all members of the
+              household aged 15 years or older.
+            </td>
+            <td data-label="2022">$86,380</td>
+            <td data-label="Average of Previous Years">$68,760</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">
+              Median household income, homeowners (2023$)
+            </td>
+            <td data-label="Description">
+              The median owner-occupied household's total income of all members
+              of the household aged 15 years or older.
+            </td>
+            <td data-label="2022">$150,920</td>
+            <td data-label="Average of Previous Years">$110,048</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">
+              Median household income, renters (2023$)
+            </td>
+            <td data-label="Description">
+              The median renter household's total income of all members of the
+              household aged 15 years or older.
+            </td>
+            <td data-label="2022">$72,480</td>
+            <td data-label="Average of Previous Years">$59,752</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Poverty rate</td>
+            <td data-label="Description">
+              The number of people below the poverty threshold divided by the
+              number of people for whom poverty status was determined.
+            </td>
+            <td data-label="2022">20.7%</td>
+            <td data-label="Average of Previous Years">22.58%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Poverty rate, population aged 65+</td>
+            <td data-label="Description">
+              The number of people aged 65 or older below the poverty line
+              divided by the total population of that age group for whom poverty
+              status was determined.
+            </td>
+            <td data-label="2022">28.2%</td>
+            <td data-label="Average of Previous Years">27.4%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">
+              Poverty rate, population under 18 years old
+            </td>
+            <td data-label="Description">
+              The number of people under 18 years old below the poverty line
+              divided by the total population of that age group for whom poverty
+              status was determined.
+            </td>
+            <td data-label="2022">28.0%</td>
+            <td data-label="Average of Previous Years">27.46%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Labor force participation rate</td>
+            <td data-label="Description">
+              The number of people aged 16 years and older who are in the
+              civilian labor force, divided by the total number of
+              non-institutionalized people aged 16 years and older.
+            </td>
+            <td data-label="2022">68.3%</td>
+            <td data-label="Average of Previous Years">65.64%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">
+              Population aged 25+ without a high school diploma
+            </td>
+            <td data-label="Description">
+              The percentage of the population aged 25 and older who have not
+              graduated from high school or received a GED.
+            </td>
+            <td data-label="2022">28.2%</td>
+            <td data-label="Average of Previous Years">33.74%</td>
+          </tr>
+          <tr>
+            <td data-label="Indicator">Unemployment rate</td>
+            <td data-label="Description">
+              The number of people aged 16 years and older in the civilian labor
+              force who are unemployed, divided by the total number of people
+              aged 16 years and older in the civilian labor force.
+            </td>
+            <td data-label="2022">6.5%</td>
+            <td data-label="Average of Previous Years">7.92%</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <p>
+        The data suggests improvements in several socioeconomic indicators for
+        Sunset Park, such as increased homeownership rates, higher median
+        household incomes, decreased poverty rates, and lower unemployment
+        rates. However, there are also areas of concern, such as the slight
+        increases in the poverty rate among older adults and children, as well
+        as a decrease in the percentage of the Asian and Black populations.
+      </p>
+    </details>
+
+    <!------------------------------------------------------- Community profile Reports ------------------------------------------------------->
+    <details class="container details-container">
+      <summary class="header">
+        <h2>Additional Reports</h2>
+      </summary>
+
+      <div class="section neighborhood-risk-factors">
+        <h3>Neighborhood Risk Factors</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Indicator">
+                  Adults reporting mice or rats outside
+                </td>
+                <td data-label="Description">
+                  Mice and rats are a source of household allergens connected to
+                  developing or worsening asthma.
+                </td>
+                <td data-label="Year">2004</td>
+                <td data-label="Value">37.9%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Adults reporting mice or rats outside
+                </td>
+                <td data-label="Description">
+                  Mice and rats are a source of household allergens connected to
+                  developing or worsening asthma.
+                </td>
+                <td data-label="Year">2010</td>
+                <td data-label="Value">29.7%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Adults reporting mice or rats outside
+                </td>
+                <td data-label="Description">
+                  Mice and rats are a source of household allergens connected to
+                  developing or worsening asthma.
+                </td>
+                <td data-label="Year">2020</td>
+                <td data-label="Value">38.3%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section neighborhood-poverty">
+        <h3>Neighborhood Poverty</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2007-11</td>
+                <td data-label="Value">26.8%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2008-12</td>
+                <td data-label="Value">28.4%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2009-13</td>
+                <td data-label="Value">30.3%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2010-14</td>
+                <td data-label="Value">31.1%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2011-15</td>
+                <td data-label="Value">32.0%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2012-16</td>
+                <td data-label="Value">32.4%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2013-17</td>
+                <td data-label="Value">30.0%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2014-18</td>
+                <td data-label="Value">27.8%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2015-19</td>
+                <td data-label="Value">25.8%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2016-20</td>
+                <td data-label="Value">22.2%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Neighborhood poverty</td>
+                <td data-label="Description">
+                  The percent of households with incomes below the federal
+                  poverty level.
+                </td>
+                <td data-label="Year">2017-21</td>
+                <td data-label="Value">20.8%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section asthma-environment">
+        <h3>Asthma and the Environment</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Indicator">
+                  Adults with asthma (past 12 months)
+                </td>
+                <td data-label="Description">
+                  Percentage of adults who reported having asthma in the past 12
+                  months.
+                </td>
+                <td data-label="Year">2003</td>
+                <td data-label="Value">11.0%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Adults with asthma (past 12 months)
+                </td>
+                <td data-label="Description">
+                  Percentage of adults who reported having asthma in the past 12
+                  months.
+                </td>
+                <td data-label="Year">2004</td>
+                <td data-label="Value">10.2%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Adults with asthma (past 12 months)
+                </td>
+                <td data-label="Description">
+                  Percentage of adults who reported having asthma in the past 12
+                  months.
+                </td>
+                <td data-label="Year">2006</td>
+                <td data-label="Value">10.8%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Adults with asthma (past 12 months)
+                </td>
+                <td data-label="Description">
+                  Percentage of adults who reported having asthma in the past 12
+                  months.
+                </td>
+                <td data-label="Year">2012</td>
+                <td data-label="Value">9.1%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2005-2007</td>
+                <td data-label="Value">6.4</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2009-2011</td>
+                <td data-label="Value">6.5</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2012-2014</td>
+                <td data-label="Value">5.2</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2015-2017</td>
+                <td data-label="Value">2.9</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2017-2019</td>
+                <td data-label="Value">2.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section climate-health">
+        <h3>Climate and Health</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Indicator">Average temperature</td>
+                <td data-label="Description">
+                  Annual average temperature recorded in Sunset Park.
+                </td>
+                <td data-label="Year">2009</td>
+                <td data-label="Value">55.1°F</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Average temperature</td>
+                <td data-label="Description">
+                  Annual average temperature recorded in Sunset Park.
+                </td>
+                <td data-label="Year">2010</td>
+                <td data-label="Value">56.7°F</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Average temperature</td>
+                <td data-label="Description">
+                  Annual average temperature recorded in Sunset Park.
+                </td>
+                <td data-label="Year">2011</td>
+                <td data-label="Value">55.9°F</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Extreme heat events</td>
+                <td data-label="Description">
+                  Number of extreme heat events recorded in Sunset Park.
+                </td>
+                <td data-label="Year">2009</td>
+                <td data-label="Value">2 events</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Extreme heat events</td>
+                <td data-label="Description">
+                  Number of extreme heat events recorded in Sunset Park.
+                </td>
+                <td data-label="Year">2010</td>
+                <td data-label="Value">3 events</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Extreme heat events</td>
+                <td data-label="Description">
+                  Number of extreme heat events recorded in Sunset Park.
+                </td>
+                <td data-label="Year">2011</td>
+                <td data-label="Value">3 events</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section housing-health">
+        <h3>Housing and Health</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Indicator">Household crowding</td>
+                <td data-label="Description">
+                  Percentage of households with more than one person per room.
+                </td>
+                <td data-label="Year">2002</td>
+                <td data-label="Value">11.4%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Household crowding</td>
+                <td data-label="Description">
+                  Percentage of households with more than one person per room.
+                </td>
+                <td data-label="Year">2005</td>
+                <td data-label="Value">10.9%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Household crowding</td>
+                <td data-label="Description">
+                  Percentage of households with more than one person per room.
+                </td>
+                <td data-label="Year">2008</td>
+                <td data-label="Value">9.8%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Household crowding</td>
+                <td data-label="Description">
+                  Percentage of households with more than one person per room.
+                </td>
+                <td data-label="Year">2011</td>
+                <td data-label="Value">8.5%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Homes with maintenance deficiencies
+                </td>
+                <td data-label="Description">
+                  Percentage of renter-occupied homes with any health-related
+                  maintenance deficiencies.
+                </td>
+                <td data-label="Year">2002</td>
+                <td data-label="Value">22.4%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Homes with maintenance deficiencies
+                </td>
+                <td data-label="Description">
+                  Percentage of renter-occupied homes with any health-related
+                  maintenance deficiencies.
+                </td>
+                <td data-label="Year">2005</td>
+                <td data-label="Value">20.8%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Homes with maintenance deficiencies
+                </td>
+                <td data-label="Description">
+                  Percentage of renter-occupied homes with any health-related
+                  maintenance deficiencies.
+                </td>
+                <td data-label="Year">2008</td>
+                <td data-label="Value">18.5%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">
+                  Homes with maintenance deficiencies
+                </td>
+                <td data-label="Description">
+                  Percentage of renter-occupied homes with any health-related
+                  maintenance deficiencies.
+                </td>
+                <td data-label="Year">2011</td>
+                <td data-label="Value">16.7%</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2005-2007</td>
+                <td data-label="Value">6.4</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2009-2011</td>
+                <td data-label="Value">6.5</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2012-2014</td>
+                <td data-label="Value">5.2</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2015-2017</td>
+                <td data-label="Value">2.9</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Asthma hospitalizations (adults)</td>
+                <td data-label="Description">
+                  Age-adjusted rate of asthma hospitalizations among adults.
+                </td>
+                <td data-label="Year">2017-2019</td>
+                <td data-label="Value">2.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section outdoor-air-health">
+        <h3>Outdoor Air and Health</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Indicator</th>
+                <th>Description</th>
+                <th>Year</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Indicator">Fine particulate matter (PM2.5)</td>
+                <td data-label="Description">
+                  Annual average concentration of fine particulate matter
+                  (PM2.5) in µg/m³.
+                </td>
+                <td data-label="Year">2009</td>
+                <td data-label="Value">10.1 µg/m³</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Fine particulate matter (PM2.5)</td>
+                <td data-label="Description">
+                  Annual average concentration of fine particulate matter
+                  (PM2.5) in µg/m³.
+                </td>
+                <td data-label="Year">2010</td>
+                <td data-label="Value">9.9 µg/m³</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Fine particulate matter (PM2.5)</td>
+                <td data-label="Description">
+                  Annual average concentration of fine particulate matter
+                  (PM2.5) in µg/m³.
+                </td>
+                <td data-label="Year">2011</td>
+                <td data-label="Value">9.8 µg/m³</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Ozone (O3)</td>
+                <td data-label="Description">
+                  Annual average concentration of ozone (O3) in ppb.
+                </td>
+                <td data-label="Year">2009</td>
+                <td data-label="Value">30.2 ppb</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Ozone (O3)</td>
+                <td data-label="Description">
+                  Annual average concentration of ozone (O3) in ppb.
+                </td>
+                <td data-label="Year">2010</td>
+                <td data-label="Value">31.0 ppb</td>
+              </tr>
+              <tr>
+                <td data-label="Indicator">Ozone (O3)</td>
+                <td data-label="Description">
+                  Annual average concentration of ozone (O3) in ppb.
+                </td>
+                <td data-label="Year">2011</td>
+                <td data-label="Value">31.5 ppb</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>
+        The data suggests a mixed but generally improving trend in various
+        health and environmental factors for Sunset Park, with some areas
+        requiring ongoing efforts to maintain or further the progress.
+      </p>
+    </details>
+
     <!-- Highcharts Section -->
     <section id="highCharts-section">
       <div id="hc-btns">
@@ -330,5 +1226,7 @@
     <script src="chartHandler.js"></script>
     <script src="sunset-map.js"></script>
     <script src="zipCodeHandler.js"></script>
+    <script src="visuals.js"></script>
+    <script src="visuals2.js"></script>
   </body>
 </html>
