@@ -1093,6 +1093,54 @@
       <div id="chart-screening" class="high-charts-container"></div>
       <div id="chart-status" class="high-charts-container"></div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+      <span>&copy; 2024</span>
+      <p id="about-link">About</p>
+    </footer>
+
+    <!-- Overlay to darken the page -->
+    <div id="overlay"></div>
+
+    <!-- About Popup -->
+    <div id="about-popup">
+      <span class="close-btn">&times;</span>
+      <p>
+        !PLACEHOLDER TEXTS! The data are derived from the 2020 PLACES: Local
+        Data for Better Health project, New York State Cancer Registry, and the
+        American Community Survey 2014-2018 - Language Spoken at Home 5-year
+        estimates.
+      </p>
+      <br />
+      <br />
+      <p>
+        Zip code level language statistics are estimates calculated using the
+        HUD-USPS 'ZIP-TRACT' ZIP Code Crosswalk files from the first quarter of
+        2021. As a result, the uncertainty of estimates of the aggregate
+        language data is higher at the zip code level, than at the tract level
+        (95% CI).
+      </p>
+      <br />
+      <br />
+      <p>
+        Shapefiles for zip code areas, Neighborhood Tabulation Areas (NTAs), and
+        Public Use Microdata Areas (PUMAs) were collected from the New York City
+        Open Data Portal.
+      </p>
+      <br />
+      <br />
+      <p>
+        For questions, comments, or suggestions about this resource, contact
+        Sheena Philogene.
+      </p>
+      <br />
+      <br />
+      <p>
+        This work is licensed under a Creative Commons Attribution 4.0
+        International License.
+      </p>
+    </div>
     <!-- Script files-->
     <script>
       //=========================================================== CONFIGURATION =================================================================
@@ -1101,9 +1149,9 @@
 
       // MAP BOUNDS - set bounds so the map has limits for visibility
       var southWest = L.latLng(40.6413, -74.0211),
-        northEast = L.latLng(40.659, -73.9947);
+        northEast = L.latLng(40.662, -73.9947);
       bounds = L.latLngBounds(southWest, northEast);
-      const INITIAL_ZOOM_LEVEL = 13;
+      const INITIAL_ZOOM_LEVEL = 14;
       const ZOOM_INCREMENT = 0.5;
 
       const sunsetParkCensusTracts = [
@@ -1227,6 +1275,6 @@
     <script src="sunset-map.js"></script>
     <script src="zipCodeHandler.js"></script>
     <script src="visuals.js"></script>
-    <script src="visuals2.js"></script>
+    <script src="popupHandler.js"></script>
   </body>
 </html>

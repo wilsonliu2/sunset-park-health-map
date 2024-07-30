@@ -5,7 +5,7 @@ var maps = {};
 maps["demographicLanguageMap"] = L.map("demographicLanguageMap", {
   maxBounds: bounds, // Map automatically bounces back to center
   maxZoom: 18,
-  minZoom: 11.5,
+  minZoom: 13,
   zoomSnap: ZOOM_INCREMENT,
   zoomDelta: ZOOM_INCREMENT,
 }).setView([40.65, -73.97], INITIAL_ZOOM_LEVEL);
@@ -3973,13 +3973,15 @@ healthStatusLayers[healthStatusLayerNames.DEPRESSION].addTo(
 selectedMap = maps["demographicLanguageMap"];
 var zipHighlightLayer = {};
 var zipBoundaryLayer = {};
+var zipBlueOutlineLayer = {};
 
-// Add highlight layer and boundaries to each map
+// Add highlight layer, boundaries, and blue outlines for specific zip codes to each map
 Object.keys(maps).forEach((mapId) => {
   zipHighlightLayer[mapId] = L.geoJson(null, {
     style: {
       color: "yellow",
       weight: 5,
+      fillOpacity: 0,
     },
     interactive: false,
   }).addTo(maps[mapId]);
@@ -3990,6 +3992,20 @@ Object.keys(maps).forEach((mapId) => {
       color: "transparent",
       opacity: 0,
       fillOpacity: 0,
+    },
+    interactive: false,
+  }).addTo(maps[mapId]);
+
+  zipBlueOutlineLayer[mapId] = L.geoJson(zipCodeBoundaries, {
+    style: function (feature) {
+      return sunsetParkZipCodes.includes(parseInt(feature.properties.ZIPCODE))
+        ? { color: "grey", weight: 1, fillOpacity: 0 }
+        : {
+            fillColor: "transparent",
+            color: "transparent",
+            opacity: 0,
+            fillOpacity: 0,
+          };
     },
     interactive: false,
   }).addTo(maps[mapId]);
@@ -4014,14 +4030,22 @@ function highlightBoundary(zipCode) {
       layer.bringToFront();
     }
   });
+
+  bringZipLayersToFront();
 }
 
 function bringZipLayersToFront() {
-  if (zipHighlightLayer && zipBoundaryLayer) {
+  if (zipHighlightLayer && zipBoundaryLayer && zipBlueOutlineLayer) {
     zipHighlightLayer[selectedMap._container.id].bringToFront();
     zipBoundaryLayer[selectedMap._container.id].bringToFront();
+    zipBlueOutlineLayer[selectedMap._container.id].bringToFront();
   }
 }
+
+// Ensure blue outline layer is always on top
+Object.keys(maps).forEach((mapId) => {
+  zipBlueOutlineLayer[mapId].bringToFront();
+});
 
 //=========================================================== COLOR FUNCTIONS =================================================================
 //=========================================================== LANGUAGE COLOR FUNCTIONS =================================================================
